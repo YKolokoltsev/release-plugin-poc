@@ -11,12 +11,21 @@
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <java.version>1.11</java.version>
+        <release.branch.name>release/${project.name}-${project.version}</release.branch.name>
     </properties>
 
     <scm>
         <developerConnection>scm:git:git@github.com:YKolokoltsev/release-plugin-poc.git</developerConnection>
         <tag>HEAD</tag>
     </scm>
+
+    <dependencies>
+        <dependency>
+            <groupId>org.apache.maven.plugins</groupId>
+            <artifactId>maven-antrun-plugin</artifactId>
+            <version>3.0.0</version>
+        </dependency>
+    </dependencies>
 
 <build>
     <plugins>
@@ -25,6 +34,30 @@
             <groupId>org.apache.maven.plugins</groupId>
             <artifactId>maven-release-plugin</artifactId>
             <version>2.5.3</version>
+            <configuration>
+                <branchName>${release.branch.name}</branchName>
+            </configuration>
+        </plugin>
+
+        <!-- Run Ant tasks (needed to show pom variables) -->
+        <plugin>
+            <groupId>org.apache.maven.plugins</groupId>
+            <artifactId>maven-antrun-plugin</artifactId>
+            <version>3.0.0</version>
+            <executions>
+                <execution>
+                    <phase>validate</phase>
+                    <goals>
+                        <goal>run</goal>
+                    </goals>
+                    <configuration>
+                        <target>
+                            <echo message="Hello, world" level="info"/>
+                            <echo message="Suggested branch name: ${release.branch.name}" level="info"/>
+                        </target>
+                    </configuration>
+                </execution>
+            </executions>
         </plugin>
 
         <!-- Configure maven compilation phase -->

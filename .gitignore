@@ -42,3 +42,6 @@ GPATH
 
 ###MAC-OS
 .DS_Store
+
+### Maven plugins
+pom.xml.releaseBackup

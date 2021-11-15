@@ -14,7 +14,7 @@
 
     <scm>
         <!--developerConnection>scm:git:git@github.com:YKolokoltsev/release-plugin-poc.git</developerConnection-->
-        <connection>scm:git:git//github.com/YKolokoltsev/release-plugin-poc.git</connection>
+        <connection>scm:git:git://github.com/YKolokoltsev/release-plugin-poc.git</connection>
         <!--connection>scm:git:ssh://git@github.com/YKolokoltsev/release-plugin-poc.git</connection-->
         <tag>release-plugin-poc-0.1.0</tag>
     </scm>

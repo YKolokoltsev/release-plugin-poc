@@ -4,7 +4,7 @@
 
     <groupId>org.example</groupId>
     <artifactId>release-plugin-poc</artifactId>
-    <version>0.1.0</version>
+    <version>0.1.0-SNAPSHOT</version>
 
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
@@ -13,9 +13,9 @@
     </properties>
 
     <scm>
-        <!--developerConnection>scm:git:git@github.com:YKolokoltsev/release-plugin-poc.git</developerConnection-->
-        <!--connection>scm:git:git@github.com:YKolokoltsev/release-plugin-poc.git</connection-->
-        <connection>scm:git:ssh://git@github.com/YKolokoltsev/release-plugin-poc.git</connection>
+        <developerConnection>scm:git:git@github.com:YKolokoltsev/release-plugin-poc.git</developerConnection>
+        <connection>scm:git:git@github.com:YKolokoltsev/release-plugin-poc.git</connection>
+        <!--connection>scm:git:ssh://git@github.com/YKolokoltsev/release-plugin-poc.git</connection-->
         <tag>release-plugin-poc-0.1.0</tag>
     </scm>
 
@@ -24,6 +24,11 @@
             <groupId>org.apache.maven.plugins</groupId>
             <artifactId>maven-antrun-plugin</artifactId>
             <version>3.0.0</version>
+        </dependency>
+        <dependency>
+            <groupId>org.apache.maven.plugins</groupId>
+            <artifactId>maven-scm-plugin</artifactId>
+            <version>1.12.0</version>
         </dependency>
     </dependencies>
 
@@ -38,6 +43,17 @@
                 <branchName>${release.branch.name}</branchName>
             </configuration>
         </plugin>
+
+        <!--plugin>
+            <groupId>org.apache.maven.plugins</groupId>
+            <artifactId>maven-scm-plugin</artifactId>
+            <version>1.12.0</version>
+            <configuration>
+                <goals>install</goals>
+            </configuration>
+        </plugin-->
+
+
 
         <!-- Run Ant tasks (needed to show pom variables) -->
         <plugin>

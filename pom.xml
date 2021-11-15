@@ -4,7 +4,7 @@
 
     <groupId>org.example</groupId>
     <artifactId>release-plugin-poc</artifactId>
-    <version>0.1.0-SNAPSHOT</version>
+    <version>0.1.0</version>
 
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
@@ -16,7 +16,7 @@
         <!--developerConnection>scm:git:git@github.com:YKolokoltsev/release-plugin-poc.git</developerConnection-->
         <connection>scm:git:https://github.com/YKolokoltsev/release-plugin-poc.git</connection>
         <!--connection>scm:git:ssh://git@github.com/YKolokoltsev/release-plugin-poc.git</connection-->
-        <tag>release-plugin-poc-0.1.1</tag>
+        <tag>release-plugin-poc-0.1.0</tag>
     </scm>
 
     <dependencies>
